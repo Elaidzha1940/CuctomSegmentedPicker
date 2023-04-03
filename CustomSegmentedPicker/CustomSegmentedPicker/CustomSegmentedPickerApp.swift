@@ -11,7 +11,7 @@ import SwiftUI
 struct CustomSegmentedPickerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CustomSegmentedPicker()
         }
     }
 }

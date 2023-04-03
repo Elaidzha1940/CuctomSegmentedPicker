@@ -1,9 +1,13 @@
+//  /*
 //
-//  ContentView.swift
-//  CustomSegmentedPicker
+//  Project: CustomSegmentedPicker
+//  File: ContentView.swift
+//  Created by: Elaidzha Shchukin
+//  Date: 03.04.2023
 //
-//  Created by Elaidzha Shchukin on 03.04.2023.
+//  Status / Decoreted
 //
+//  */
 
 import SwiftUI
 
@@ -18,63 +22,61 @@ struct CustomSegmentedPicker: View {
         
         HStack {
             
-            Text("Запланированные")
+            Text("Planned for today")
                 .fontWeight(.regular)
                 .padding(.vertical, 18)
                 .padding(.horizontal, 25)
                 .background(
                     
                     ZStack {
-                        if currentTab == "Запланированные" {
-                            Color.elements(.Epink)
+                        if currentTab == "Planned for today" {
+                            Color.brown
                                 .cornerRadius(13)
                                 .matchedGeometryEffect(id: "TAB", in: animation)
                         }
                     }
                 )
-                .foregroundColor(currentTab == "Запланированные" ?
+                .foregroundColor(currentTab == "Planned for today" ?
                     .white : .black)
                 .onTapGesture {
                     withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.6)) {
-                        currentTab = "Запланированные"
+                        currentTab = "Planned for today"
                     }
                 }
             Spacer()
             
-            Text("Архив")
+            Text("Archive")
                 .fontWeight(.regular)
                 .padding(.vertical, 18)
                 .padding(.horizontal, 65)
                 .background(
                     
                     ZStack {
-                        if currentTab == "Архив" {
-                            Color.elements(.Epink)
+                        if currentTab == "Archive" {
+                            Color.red
                                 .cornerRadius(13)
                                 .matchedGeometryEffect(id: "TAB", in: animation)
                         }
                     }
                 )
-                .foregroundColor(currentTab == "Архив" ?
+                .foregroundColor(currentTab == "Archive" ?
                     .white : .black)
                 .onTapGesture {
                     withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.6)) {
-                        currentTab = "Архив"
+                        currentTab = "Archive"
                     }
                 }
         }
         .padding(.vertical, 7)
         .padding(.horizontal, 9)
-        .background(Color.elements(.bright))
+        .background(Color.green)
         .cornerRadius(13)
     }
 }
 
 struct CustomSegmentedPicker_Previews: PreviewProvider {
     static var previews: some View {
-        self.devices {
             CustomSegmentedPicker()
-        }
     }
 }
 

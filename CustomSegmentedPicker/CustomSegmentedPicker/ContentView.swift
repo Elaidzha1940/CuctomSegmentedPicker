@@ -53,7 +53,7 @@ struct CustomSegmentedPicker: View {
                     
                     ZStack {
                         if currentTab == "Archive" {
-                            Color.red
+                            Color.brown
                                 .cornerRadius(13)
                                 .matchedGeometryEffect(id: "TAB", in: animation)
                         }
